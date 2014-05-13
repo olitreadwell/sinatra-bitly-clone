@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Welcome to SinatraShortener!</h1>
+  <h1>Welcome to Bitoli!</h1>
   <div class="form">
     <form class="shortener" action="/urls" method="post">
       <div><input type="text" name="resource" placeholder="Your URL"></div>
@@ -8,8 +8,8 @@
   </div>
 
   <div class="url_list">
-    <% if @url.short_resource %>
-        <p><a href="<%=@url.resource%>"><%= @url.short_resource %></a></p>
+    <% if @url %>
+        <p><a href="http://<%=@url.resource%>"><%= @url.short_resource %></a></p>
     <% end %>
   </div>
 </div>
