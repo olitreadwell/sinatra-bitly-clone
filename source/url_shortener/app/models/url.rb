@@ -13,11 +13,15 @@ class Url < ActiveRecord::Base
     number_array = (0..9).to_a.sample(only_letters.length)
     combined_array = only_letters + number_array
     end_of_short_url = combined_array.sample(7).join("")
-    return "bit.oli/#{end_of_short_url}"
+    return "#{end_of_short_url}"
   end
 
   def set_short_url
     self.short_resource = create_short_url
+  end
+
+  def increment_visit_count
+    self.visit_count +=1
   end
 
   validates :resource, presence: true,

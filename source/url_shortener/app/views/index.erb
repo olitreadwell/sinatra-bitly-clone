@@ -7,9 +7,22 @@
     </form>
   </div>
 
-  <div class="url_list">
-    <% if @url %>
-        <p><a href="http://<%=@url.resource%>"><%= @url.short_resource %></a></p>
+  <div>
+    <% if @new_url %>
+        <p>Your New URL:</p>
+        <p>
+          <a href="/<%=@new_url.short_resource%>">bit.oli/<%= @new_url.short_resource %></a> -- <span>Visits: <%= @new_url.visit_count %></span>
+        </p>
+    <% end %>
+
+    <% if @prev_urls %>
+        <p>Your Older URLs:</p>
+        <% @prev_urls.each do |historic_url| %>
+          <p>
+            <a href="/<%=historic_url.short_resource%>">bit.oli/<%= historic_url.short_resource %></a> -- <span>Visits: <%= historic_url.visit_count %></span>
+          </p>
+      <% end %>
     <% end %>
   </div>
+
 </div>
