@@ -5,7 +5,7 @@ class Url < ActiveRecord::Base
     self.visit_count ||= 0
   end
 
-  before_save :set_short_url
+  after_initialize :set_short_url
 
   def create_short_url
     #method that will generate a "random" URL
@@ -17,7 +17,8 @@ class Url < ActiveRecord::Base
   end
 
   def set_short_url
-    self.short_resource = create_short_url
+    self.short_resource ||= create_short_url
+    # self.save
   end
 
   def increment_visit_count
