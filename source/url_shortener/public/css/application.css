@@ -1,9 +1,21 @@
+body {
+  background-color: #f7f7f7;
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
+
 th {
   text-align: left;
 }
+
+h1 {
+  color: #ee5f34;
+  font-family: Helvetica;
+}
+
+

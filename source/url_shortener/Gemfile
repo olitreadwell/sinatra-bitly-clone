@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 ruby '2.0.0'
+=======
+>>>>>>> Oli_AND_Paige
 source 'https://rubygems.org'
 
 # PostgreSQL driver
